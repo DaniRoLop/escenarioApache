@@ -1,0 +1,13 @@
+version: "3"
+services:
+  web:
+    build:
+      context: ./
+      dockerfile: ./conf/Dockerfile
+    ports:
+      - "8181:80"
+    volumes:
+      - ./web:/var/www/html
+      - ./conf/sri.asir4all.ss.conf:/etc/apache2/sites-available/000-default.conf
+      - ./conf/digest.txt:/etc/apache2/digest.txt
+      - ./conf/basic.txt:/etc/apache2/clavesapstatus.txt
